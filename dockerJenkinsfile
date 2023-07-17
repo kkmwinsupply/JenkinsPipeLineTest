@@ -1,10 +1,23 @@
-  pipeline {
-  agent{
-      }
+pipeline {
+    agent any
+    
     stages {
-        stage('Check Java') {
+        stage('Build') {
             steps {
-                sh 'java -version'
+                // Build steps
+            }
+        }
+        
+        stage('Run Tests') {
+            agent none
+            steps {
+                // Steps to run tests on the Jenkins controller
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Deployment steps
             }
         }
     }
