@@ -1,23 +1,12 @@
-pipeline {
-    agent any
+  pipeline {
+    agent {
+        label 'slave'
+    }
     
     stages {
-        stage('Build') {
+        stage('Check Java') {
             steps {
-                // Build steps
-            }
-        }
-        
-        stage('Run Tests') {
-            agent none
-            steps {
-                // Steps to run tests on the Jenkins controller
-            }
-        }
-        
-        stage('Deploy') {
-            steps {
-                // Deployment steps
+                sh 'java -version'
             }
         }
     }
