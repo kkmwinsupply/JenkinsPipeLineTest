@@ -1,8 +1,6 @@
 pipeline{
     agent{
-        docker {
-            image 'dockerjenkinskarthik:latest' 
-        }
+        dockerfile true
     }
     stages{
         stage('Build'){
